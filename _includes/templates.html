@@ -1,0 +1,37 @@
+
+{% raw %}
+<script type="x-tmpl-mustache" data-template="item">
+    <div class="col-md-3">
+        <article class="card">
+            <img class="card-img-top" src="{{Product.img}}" alt="Card image cap">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                      <h4 class="card-title">{{Product.name}}</h4>
+                      <h5 class="card-title">{{Product.brand}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <p>{{Insignium.name}} - {{Insignium.location}} - {{#Prices}} {{final_price}} - {{updatedAt}}{{/Prices}}</p>
+                </div>
+            </div>
+        </article>
+    </div>
+</script>
+
+
+<script type="x-tmpl-mustache" data-template="items">
+    <div class="row">
+        {{#.}}
+            {{> item}}
+        {{/.}}
+        {{^.}}
+            <p>Nothing to see here</p>
+        {{/.}}
+    </div>
+</script>
+
+
+{% endraw %}

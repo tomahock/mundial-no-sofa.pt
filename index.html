@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="beer-tab" data-toggle="tab" href="#beer" role="tab" aria-controls="beer"
+               aria-selected="true">Cerveja</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="olive-tab" data-toggle="tab" href="#olive" role="tab" aria-controls="olive"
+               aria-selected="false">Tremoços, Azeitonas e Pickles</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="chips-tab" data-toggle="tab" href="#chips" role="tab" aria-controls="chips"
+               aria-selected="false">Batatas Fritas e Aperitivos</a>
+        </li>
+    </ul>
+</div>
+<div class="tab-content" id="myTabContent">
+    <section id="beer" class="tab-pane fade show active container-fluid" role="tabpanel" aria-labelledby="beer-tab"></section>
+    <section id="olive" class="tab-pane fade container-fluid" role="tabpanel" aria-labelledby="olive-tab"></section>
+    <section id="chips" class="tab-pane fade container-fluid" role="tabpanel" aria-labelledby="chips-tab"></section>
+</div>
+
