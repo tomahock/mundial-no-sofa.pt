@@ -30,8 +30,6 @@
     function getBeer() {
         var beers = [];
         $.get(api + 'api/v1/priceUtils/catProducts?catName=cervejas', function(res) {
-            console.log(res.data);
-
             for( i in res.data){
                 if(res.data[i].Prices[0].updatedAt.indexOf('2017') === -1){
                     var timestamp = new Date(res.data[i].Prices[0].updatedAt);
