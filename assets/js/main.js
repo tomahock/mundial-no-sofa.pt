@@ -17,7 +17,6 @@
                 res.data[i].timestamp = timestamp.getTime();
             }
 
-            console.log(res.data);
             $('#beer').html(Mustache.render(templates['items'],  res.data.sort(function (a, b) {
                 return b.timestamp - a.timestamp;
             }), {item: templates['item']}));
@@ -26,14 +25,27 @@
 
     function getOlive() {
         $.get(api + 'api/v1/priceUtils/catProducts?catName=Tremoços,%20Azeitonas%20e%20Pickles', function(res) {
-            x = _.sortBy(res.data, 'updatedAt');
-            $('#olive').html(Mustache.render(templates['items'], res.data, {item: templates['item']}));
+            for( i in res.data){
+                var timestamp = new Date(res.data[i].Prices[0].updatedAt);
+                res.data[i].timestamp = timestamp.getTime();
+            }
+
+            $('#olive').html(Mustache.render(templates['items'],  res.data.sort(function (a, b) {
+                return b.timestamp - a.timestamp;
+            }), {item: templates['item']}));
         });
     }
 
     function getChips() {
         $.get(api + 'api/v1/priceUtils/catProducts?catName=Batatas%20Fritas%20e%20Aperitivos', function(res) {
-            $('#chips').html(Mustache.render(templates['items'], res.data, {item: templates['item']}));
+            for( i in res.data){
+                var timestamp = new Date(res.data[i].Prices[0].updatedAt);
+                res.data[i].timestamp = timestamp.getTime();
+            }
+
+            $('#chips').html(Mustache.render(templates['items'],  res.data.sort(function (a, b) {
+                return b.timestamp - a.timestamp;
+            }), {item: templates['item']}));
         });
     }
 
